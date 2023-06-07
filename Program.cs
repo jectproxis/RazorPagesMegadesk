@@ -1,7 +1,12 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using RazorPagesMegadesk.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<RazorPagesMegadeskContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("RazorPagesMegadeskContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesMegadeskContext' not found.")));
 
 var app = builder.Build();
 
