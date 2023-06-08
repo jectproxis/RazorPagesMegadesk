@@ -41,6 +41,10 @@ a, th {
     font-family: "Roboto Condensed";
 }
 
+.navbar-brand {
+    font-weight: 700;
+}
+
 .vertical-buttons a {
     display: block;
     padding: .5rem 1rem;
