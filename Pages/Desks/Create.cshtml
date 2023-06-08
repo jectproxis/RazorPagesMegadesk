@@ -1,0 +1,88 @@
+﻿@page
+@using RazorPagesMegadesk.Models;
+@model RazorPagesMegadesk.Pages.Desks.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Quote</h1>
+
+<h4>Desk</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Desk.Name" class="control-label"></label>
+                <input asp-for="Desk.Name" class="form-control" />
+                <span asp-validation-for="Desk.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desk.Width" class="control-label"></label>
+                <input asp-for="Desk.Width" class="form-control" />
+                <span asp-validation-for="Desk.Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desk.Depth" class="control-label"></label>
+                <input asp-for="Desk.Depth" class="form-control" />
+                <span asp-validation-for="Desk.Depth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desk.Drawers" class="control-label"></label>
+                <select asp-for="Desk.Drawers" class="form-select">
+                    <option value="">--Select Number of Drawers--</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+                <span asp-validation-for="Desk.Drawers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desk.Surface" class="control-label"></label>
+                <select class="form-select" asp-for="Desk.Surface" asp-items="Html.GetEnumSelectList<Surface>()">
+                    <option value="">--Select an option--</option>
+                </select>
+                <!--<select asp-for="Desk.Surface" class="form-control"></select>-->
+                <span asp-validation-for="Desk.Surface" class="text-danger"></span>
+            </div>
+            <img src="~/Images/desk.png" alt="desk" width="250" height="300" />
+            <div class="form-group">
+                <input type="radio" asp-for="Desk.RushOrder" value="14"/>14 Days (standard)
+                <input type="radio" asp-for="Desk.RushOrder" value="3" />3 Day
+                <input type="radio" asp-for="Desk.RushOrder" value="5" />5 Day
+                <input type="radio" asp-for="Desk.RushOrder" value="7" />7 Day
+                <!--<label asp-for="Desk.RushOrder" class="control-label"></label>
+                <input asp-for="Desk.RushOrder" class="form-control" />-->
+                <span asp-validation-for="Desk.RushOrder" class="text-danger"></span>
+            </div>
+            <!--<div class="form-group">
+                <label asp-for="Desk.Date" class="control-label"></label>
+                <input asp-for="Desk.Date" class="form-control" />
+                <span asp-validation-for="Desk.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desk.TotalCost" class="control-label"></label>
+                <input asp-for="Desk.TotalCost" class="form-control" />
+                <span asp-validation-for="Desk.TotalCost" class="text-danger"></span>
+            </div>-->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

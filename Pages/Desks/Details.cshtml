@@ -1,0 +1,67 @@
+﻿@page
+@model RazorPagesMegadesk.Pages.Desks.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Desk</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Desk.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Desk.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Desk.Width)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Desk.Width)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Desk.Depth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Desk.Depth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Desk.Drawers)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Desk.Drawers)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Desk.Surface)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Desk.Surface)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Desk.RushOrder)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Desk.RushOrder)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Desk.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Desk.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Desk.TotalCost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Desk.TotalCost)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Desk?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

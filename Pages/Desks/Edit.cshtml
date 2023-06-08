@@ -1,0 +1,70 @@
+﻿@page
+@model RazorPagesMegadesk.Pages.Desks.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Desk</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Desk.Id" />
+            <div class="form-group">
+                <label asp-for="Desk.Name" class="control-label"></label>
+                <input asp-for="Desk.Name" class="form-control" />
+                <span asp-validation-for="Desk.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desk.Width" class="control-label"></label>
+                <input asp-for="Desk.Width" class="form-control" />
+                <span asp-validation-for="Desk.Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desk.Depth" class="control-label"></label>
+                <input asp-for="Desk.Depth" class="form-control" />
+                <span asp-validation-for="Desk.Depth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desk.Drawers" class="control-label"></label>
+                <input asp-for="Desk.Drawers" class="form-control" />
+                <span asp-validation-for="Desk.Drawers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desk.Surface" class="control-label"></label>
+                <select asp-for="Desk.Surface" class="form-control"></select>
+                <span asp-validation-for="Desk.Surface" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desk.RushOrder" class="control-label"></label>
+                <input asp-for="Desk.RushOrder" class="form-control" />
+                <span asp-validation-for="Desk.RushOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desk.Date" class="control-label"></label>
+                <input asp-for="Desk.Date" class="form-control" />
+                <span asp-validation-for="Desk.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desk.TotalCost" class="control-label"></label>
+                <input asp-for="Desk.TotalCost" class="form-control" />
+                <span asp-validation-for="Desk.TotalCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
