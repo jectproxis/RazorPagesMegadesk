@@ -1,9 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500&family=Hanuman:wght@100;300;400;700;900&family=Livvic:wght@100;300;400;500;600;700;900&family=Manjari:wght@100;400;700&family=Mukta:wght@200;300;400;500;600;700;800&family=NTR&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Secular+One&family=Share+Tech+Mono&family=Space+Mono:wght@400;700&family=Titillium+Web:wght@300;400;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap');
 html {
   font-size: 14px;
 }
 
-@media (min-width: 768px) {
-  html {
+.bg-image {
+    max-width: 100%;
+}
+.bg-image img{
+   /* background-image: url(../Images/desk-2.png);*/
+    background-repeat: no-repeat;
+    height:548px;
+    width:1296px;
+    background-size:cover;
+    object-fit:inherit;
+    opacity: .75;
+    /*filter:sepia(50%);*/
+}
+
+.bg-image h1 {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -140%);
+    font-family: "Ubuntu";
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 8px 7px #373737;
+}
+
+.vertical-buttons a {
+    display: block;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: .2s all;
+    box-shadow: 3px 4px 7px #373737;
+    background-color: #46972c;
+}
+
+.vertical-buttons a:hover {
+    background-color: #4a6741;
+}
+
+.vertical-buttons {
+    display: table;
+    margin: 0 auto;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,12%);
+}
+
+footer {
+    background-color: #4a6741;
+}
+
+footer .container, footer .container a {
+    color: white;
+    
+}
+footer .container a {
+    font-weight: 700;
+    transition: .2s all;
+}
+
+footer .container a:hover{
+    color: greenyellow;
+    
+}
+
+
+    @media (min-width: 768px) {
+        html {
     font-size: 16px;
   }
 }
