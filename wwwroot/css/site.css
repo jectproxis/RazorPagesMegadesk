@@ -29,6 +29,18 @@ html {
     text-shadow: 2px 8px 7px #373737;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Ubuntu";
+}
+
+p, td{
+    font-family: "Livvic";
+}
+
+a, th {
+    font-family: "Roboto Condensed";
+}
+
 .vertical-buttons a {
     display: block;
     padding: .5rem 1rem;
