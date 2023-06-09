@@ -103,10 +103,10 @@
     <script>
         function showSurfaceImage() {
             var surfaceSelector = document.getElementById("Desk_Surface");
-            var selectedOption = surfaceSelector.options[surfaceSelector.selectedIndex];
+            var selectedIndex = surfaceSelector.selectedIndex;
+            var surfaceName = surfaceSelector.options[selectedIndex].text.toLowerCase();
             var image = document.getElementById("surfaceImage");
-            var imagePath = "/Images/" + selectedOption.value + "Desk.jpg";
-            image.src = imagePath;
+            image.src = "../Images/" + surfaceName + "Desk.jpg";
             image.style.display = "block";
         }
     </script>
