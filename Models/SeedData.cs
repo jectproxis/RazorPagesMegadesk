@@ -28,9 +28,9 @@ namespace RazorPagesMegadesk.Models
                         Depth = 12,
                         Drawers = 1,
                         Surface = Surface.Laminate,
-                        RushOrder = "3 Day",
+                        RushOrder = "3 Days",
                         Date = DateTime.Parse("2023-6-6"),
-                        TotalCost = 500
+                        TotalCost = 410
                     },
                     new Desk
                     {
@@ -39,9 +39,9 @@ namespace RazorPagesMegadesk.Models
                         Depth = 15,
                         Drawers = 3,
                         Surface = Surface.Oak,
-                        RushOrder = "7 Day",
+                        RushOrder = "7 Days",
                         Date = DateTime.Parse("2023-6-6"),
-                        TotalCost = 600
+                        TotalCost = 580
                     });
                 context.SaveChanges();
             }

@@ -29,7 +29,7 @@ namespace RazorPagesMegadesk.Pages.Desks
                 return Page();
             }
 
-            Desk.RushOrder += " Day";
+            Desk.RushOrder += " Days";
 
             Desk.Date = DateTime.Now;
 

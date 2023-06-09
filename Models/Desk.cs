@@ -40,6 +40,7 @@ namespace RazorPagesMegadesk.Models
         [Display(Name = "Rush Order")]
         public string RushOrder { get; set; }
 
+
         [Display(Name = "Order Date")]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
@@ -51,10 +52,22 @@ namespace RazorPagesMegadesk.Models
         {
             int basePrice = 200;
             int surfacePrice = CalculateSurfacePrice(Surface);
-            int rushOrderPrice = CalculateRushOrderPrice(RushOrder);
+            int rushOrderPrice = CalculateRushOrderPrice(RushOrder, Width, Depth);
+            int surfaceAreaPrice = CalculateSurfaceAreaPrice(Width, Depth);
             int drawersPrice = Drawers * 50;
 
-            TotalCost = basePrice + surfacePrice + rushOrderPrice + drawersPrice;
+            TotalCost = basePrice + surfaceAreaPrice + surfacePrice + rushOrderPrice + drawersPrice;
+        }
+
+        private int CalculateSurfaceAreaPrice(int width, int depth)
+        {
+            int price = 0;
+            int surfaceArea = width * depth;
+
+            if (surfaceArea > 1000) { 
+                price = surfaceArea - 1000;
+            }
+            return price;
         }
 
         private int CalculateSurfacePrice(Surface surface)
@@ -83,11 +96,55 @@ namespace RazorPagesMegadesk.Models
             return surfacePrice;
         }
 
-        private int CalculateRushOrderPrice(string rushOrder)
+        private int CalculateRushOrderPrice(string rushOrder, int width, int depth)
         {
-            int rushOrderPrice = 0;
 
-            switch (rushOrder)
+            int rushOrderPrice = 0;
+            int surfaceArea = width * depth;
+            if (surfaceArea < 1000) {
+                switch (rushOrder)
+                {
+                    case "3 Days":
+                        rushOrderPrice = 60;
+                        break;
+                    case "5 Days":
+                        rushOrderPrice = 40;
+                        break;
+                    case "7 Days":
+                        rushOrderPrice = 30;
+                        break;
+                }
+            } else if (surfaceArea <= 2000) {
+                switch (rushOrder)
+                {
+                    case "3 Days":
+                        rushOrderPrice = 70;
+                        break;
+                    case "5 Days":
+                        rushOrderPrice = 50;
+                        break;
+                    case "7 Days":
+                        rushOrderPrice = 35;
+                        break;
+                }
+            } else
+            {
+                switch (rushOrder)
+                {
+                    case "3 Days":
+                        rushOrderPrice = 80;
+                        break;
+                    case "5 Days":
+                        rushOrderPrice = 60;
+                        break;
+                    case "7 Days":
+                        rushOrderPrice = 40;
+                        break;
+                }
+            }
+
+
+            /*switch (rushOrder)
             {
                 case "3 Day":
                     rushOrderPrice = 60;
@@ -98,7 +155,7 @@ namespace RazorPagesMegadesk.Models
                 case "7 Day":
                     rushOrderPrice = 30;
                     break;
-            }
+            }*/
 
             return rushOrderPrice;
         }

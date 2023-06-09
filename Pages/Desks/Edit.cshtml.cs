@@ -47,11 +47,15 @@ namespace RazorPagesMegadesk.Pages.Desks
             {
                 return Page();
             }
+            // Calculate the total cost
+            /*Desk.CalculateTotalCost();*/
 
             _context.Attach(Desk).State = EntityState.Modified;
 
             try
             {
+                // Calculate the total cost
+                Desk.CalculateTotalCost();
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)

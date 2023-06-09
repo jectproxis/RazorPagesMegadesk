@@ -54,13 +54,30 @@
             </div>
             <img src="~/Images/desk.png" alt="desk" width="250" height="300" />
             <div class="form-group">
-                <input type="radio" asp-for="Desk.RushOrder" value="14"/>14 Days (standard)
-                <input type="radio" asp-for="Desk.RushOrder" value="3" />3 Day
-                <input type="radio" asp-for="Desk.RushOrder" value="5" />5 Day
-                <input type="radio" asp-for="Desk.RushOrder" value="7" />7 Day
+                <fieldset>
+                    <label asp-for="Desk.RushOrder" class="control-label"></label>:<br />
+                    <input type="radio" asp-for="Desk.RushOrder" value="14"/>14 Days (standard)<br />
+                    <input type="radio" asp-for="Desk.RushOrder" value="3" />3 Days<br />
+                    <input type="radio" asp-for="Desk.RushOrder" value="5" />5 Days<br />
+                    <input type="radio" asp-for="Desk.RushOrder" value="7" />7 Days<br />
+                
+
+                @*<select asp-for="Desk.RushOrder" class="form-select">
+                    <option value="">--Select Rush Order--</option>
+                    <option value="14">14 Days (standard)</option>
+                    <option value="3">3 Days</option>
+                    <option value="5">5 Days</option>
+                    <option value="7">7 Days</option>
+                </select>*@
+                @*@Html.RadioButtonFor(model => model.Desk.RushOrder, "14")<span>14 Days (Standard)</span> 
+                @Html.RadioButtonFor(model => model.Desk.RushOrder, "3")<span>3 Days</span>  
+                @Html.RadioButtonFor(model => model.Desk.RushOrder, "5")<span>5 Days</span>  
+                @Html.RadioButtonFor(model => model.Desk.RushOrder, "7")<span>7 Days</span>*@
+
                 <!--<label asp-for="Desk.RushOrder" class="control-label"></label>
                 <input asp-for="Desk.RushOrder" class="form-control" />-->
                 <span asp-validation-for="Desk.RushOrder" class="text-danger"></span>
+                </fieldset>
             </div>
             <!--<div class="form-group">
                 <label asp-for="Desk.Date" class="control-label"></label>
