@@ -46,13 +46,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Desk.Surface" class="control-label"></label>
-                <select class="form-select" asp-for="Desk.Surface" asp-items="Html.GetEnumSelectList<Surface>()">
+                <select class="form-select" asp-for="Desk.Surface" asp-items="Html.GetEnumSelectList<Surface>()" onchange="showSurfaceImage()">
                     <option value="">--Select an option--</option>
                 </select>
-                <!--<select asp-for="Desk.Surface" class="form-control"></select>-->
                 <span asp-validation-for="Desk.Surface" class="text-danger"></span>
             </div>
-            <img src="~/Images/desk.png" alt="desk" width="250" height="300" />
+            <img id="surfaceImage" src="" alt="surface" width="250" height="300" style="display:none" />    
             <div class="form-group">
                 <fieldset>
                     <label asp-for="Desk.RushOrder" class="control-label"></label>:<br />
@@ -101,5 +100,15 @@
 </div>
 
 @section Scripts {
+    <script>
+        function showSurfaceImage() {
+            var surfaceSelector = document.getElementById("Desk_Surface");
+            var selectedOption = surfaceSelector.options[surfaceSelector.selectedIndex];
+            var image = document.getElementById("surfaceImage");
+            var imagePath = "/Images/" + selectedOption.value + "Desk.jpg";
+            image.src = imagePath;
+            image.style.display = "block";
+        }
+    </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
